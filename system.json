@@ -1,8 +1,11 @@
 {
-  "id": "scum-and-villainy",
-  "title": "Scum and Villainy",
+  "id": "scum-and-villainy-teddy",
+  "title": "Scum and Villainy (Teddy's Edit)",
   "description": "Scum and Villainy game system.",
   "authors": [
+    {
+      "name": "Teddy"
+    },
     {
       "name": "Andrew Garinger",
       "discord": "agaringer#6498"
@@ -11,21 +14,21 @@
       "name": "megastruktur"
     }
   ],
-  "url": "#{URL}#",
+  "url": "https://github.com/DaTedinator/foundryvtt-scum-and-villainy",
   "flags": {
     "hotReload": {
       "extensions": ["css", "html", "json", "js"],
       "paths": ["module", "templates", "lang", "styles"]
     }
   },
-  "version": "#{VERSION}#",
+  "version": "1.0.0",
   "compatibility": {
     "minimum": 13,
     "verified": 13.344
   },
   "socket": false,
-  "manifest": "#{MANIFEST}#",
-  "download": "#{DOWNLOAD}#",
+  "manifest": "https://raw.githubusercontent.com/DaTedinator/foundryvtt-scum-and-villainy/master/system.json",
+  "download": "https://github.com/DaTedinator/foundryvtt-scum-and-villainy/archive/refs/heads/master.zip",
   "protected": false,
   "esmodules": [
     "module/sav.js"
