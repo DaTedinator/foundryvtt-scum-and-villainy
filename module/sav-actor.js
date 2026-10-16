@@ -12,24 +12,24 @@ export class SaVActor extends Actor {
     let icon;
     switch( actorData.type ) {
       case "universe": {
-        icon = "systems/scum-and-villainy/styles/assets/icons/galaxy.png";
+        icon = "systems/scum-and-villainy-teddy/styles/assets/icons/galaxy.png";
         break;
       }
       case "ship": {
-        icon = "systems/scum-and-villainy/styles/assets/icons/ufo.png";
+        icon = "systems/scum-and-villainy-teddy/styles/assets/icons/ufo.png";
         break;
       }
       case "character":
       case "npc": {
-        icon = "systems/scum-and-villainy/styles/assets/icons/astronaut-helmet.png";
+        icon = "systems/scum-and-villainy-teddy/styles/assets/icons/astronaut-helmet.png";
         break;
       }
       case "\uD83D\uDD5B clock": {
-        icon = "systems/scum-and-villainy/themes/blue/4clock_0.webp";
+        icon = "systems/scum-and-villainy-teddy/themes/blue/4clock_0.webp";
         break;
       }
       case "faction-status": {
-        icon = "systems/scum-and-villainy/styles/assets/icons/Icon.6_62.png";
+        icon = "systems/scum-and-villainy-teddy/styles/assets/icons/Icon.6_62.png";
         break;
       }
     }
@@ -57,8 +57,8 @@ export class SaVActor extends Actor {
     const updateData = {};
 
     if( createData.type === "character" ) {
-      const playbookXP = game.settings.get( "scum-and-villainy", "defaultPlaybookXPBarSize" );
-      const attributeXP = game.settings.get( "scum-and-villainy", "defaultAttributeXPBarSize" );
+      const playbookXP = game.settings.get( "scum-and-villainy-teddy", "defaultPlaybookXPBarSize" );
+      const attributeXP = game.settings.get( "scum-and-villainy-teddy", "defaultAttributeXPBarSize" );
 
       if( playbookXP ) {
         updateData['system.experienceMax'] = playbookXP;
@@ -75,7 +75,7 @@ export class SaVActor extends Actor {
     }
 
     if( createData.type === "ship" ) {
-      const crewXP = game.settings.get( "scum-and-villainy", "defaultCrewXPBarSize" );
+      const crewXP = game.settings.get( "scum-and-villainy-teddy", "defaultCrewXPBarSize" );
 
       if( crewXP ) {
         updateData['system.crew_experienceMax'] = crewXP;
@@ -112,7 +112,7 @@ export class SaVActor extends Actor {
           // this.system.attributes[a].skills[s].display = (this.system.attributes[a].skills[s].base ? this.system.attributes[a].skills[s].base : 0) + (this.system.attributes[a].skills[s].bonus ? this.system.attributes[a].skills[s]?.bonus : 0);
         });
       });
-      let ship_actors = this.getFlag("scum-and-villainy", "ship") || [];
+      let ship_actors = this.getFlag("scum-and-villainy-teddy", "ship") || [];
       let shipActor = game.actors.get( ship_actors[0]?.id );
       if ( shipActor?.system.installs.stun_inst === 1 ) {
         this.system.stun_weapons = 1;
@@ -150,7 +150,7 @@ export class SaVActor extends Actor {
 	      for (const a in this.system.attributes) {
           dice_amount[a] = 0;
 		      // Add +1d to resistance rolls only for Forged item on ship
-		      let ship_actors = this.getFlag("scum-and-villainy", "ship") || [];
+		      let ship_actors = this.getFlag("scum-and-villainy-teddy", "ship") || [];
           let actor = game.actors.get( ship_actors[0]?.id );
 		      if (actor?.system.installs.forged_inst === 1) {
 		        dice_amount[a]++;
@@ -194,13 +194,13 @@ export class SaVActor extends Actor {
     const base_dice = this.getRollData().dice_amount[attribute_name];
     let total_dice = base_dice;
 
-    let dropdowns = game.settings.get("scum-and-villainy", "useDropdownsInRollDialog");
+    let dropdowns = game.settings.get("scum-and-villainy-teddy", "useDropdownsInRollDialog");
 
     if( dropdowns ) {
       new Dialog( {
         title: `${ game.i18n.localize( 'BITD.Roll' ) } ${ game.i18n.localize( attribute_label ) }`,
         content: `
-        <div class="scum-and-villainy" id="skill-roll">
+        <div class="scum-and-villainy-teddy" id="skill-roll">
 		      <h2>${ game.i18n.localize( 'BITD.Roll' ) } ${ game.i18n.localize( attribute_label ) } (${ total_dice }d)</h2>
           <form>
             <div class="form-group roll position">
@@ -263,7 +263,7 @@ export class SaVActor extends Actor {
       new Dialog( {
         title: `${ game.i18n.localize( 'BITD.Roll' ) } ${ game.i18n.localize( attribute_label ) }`,
         content: `
-        <div class="scum-and-villainy" id="skill-roll">
+        <div class="scum-and-villainy-teddy" id="skill-roll">
 		      <h2>${ game.i18n.localize( 'BITD.Roll' ) } ${ game.i18n.localize( attribute_label ) } (${ total_dice }d)</h2>
           <form>
             <div class="form-group roll position">
@@ -349,7 +349,7 @@ export class SaVActor extends Actor {
     new Dialog({
       title: `${game.i18n.localize('BITD.Roll')} ${game.i18n.localize(attribute_label)}`,
       content: `
-        <div class="scum-and-villainy" id="skill-roll">
+        <div class="scum-and-villainy-teddy" id="skill-roll">
 		      <h2>${game.i18n.localize('BITD.Roll')} ${game.i18n.localize(attribute_label)} (${total_dice}d)</h2>
           <form>
             <div class="form-group roll base-dice">

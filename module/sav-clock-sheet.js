@@ -21,7 +21,7 @@ export class SaVClockSheet extends foundry.appv1.sheets.ActorSheet {
       super.defaultOptions,
       {
         classes: ["clocks", "sheet", `clocks-system-${game.system.id}`, "actor", "npc"],
-        template: "systems/scum-and-villainy/templates/sav-clock-sheet.html",
+        template: "systems/scum-and-villainy-teddy/templates/sav-clock-sheet.html",
         width: 360,
         height: 550,
         ...supportedSystem.sheetDefaultOptions
@@ -157,12 +157,12 @@ export default {
   let t = canvas.tokens.get(token.id);
   let a = game.actors.get(token.actorId);
 
-  if( !a?.flags['scum-and-villainy']?.clocks ) {
+  if( !a?.flags['scum-and-villainy-teddy']?.clocks ) {
     return false;
   }
 
-  const button1HTML = await foundry.applications.handlebars.renderTemplate('systems/scum-and-villainy/templates/sav-clock-button1.html');
-  const button2HTML = await foundry.applications.handlebars.renderTemplate('systems/scum-and-villainy/templates/sav-clock-button2.html');
+  const button1HTML = await foundry.applications.handlebars.renderTemplate('systems/scum-and-villainy-teddy/templates/sav-clock-button1.html');
+  const button2HTML = await foundry.applications.handlebars.renderTemplate('systems/scum-and-villainy-teddy/templates/sav-clock-button2.html');
 
   html.querySelector("div.left").insertAdjacentHTML('beforeend', button1HTML);
   html.querySelector("div.left").addEventListener('click', async (event) => {
@@ -170,7 +170,7 @@ export default {
     // re-get in case there has been an update
     t = canvas.tokens.get(token.id);
 
-    const oldClock = new SaVClock(a.flags['scum-and-villainy']?.clocks);
+    const oldClock = new SaVClock(a.flags['scum-and-villainy-teddy']?.clocks);
     let newClock;
 
     const target = event.target.classList.contains("control-icon")
@@ -192,7 +192,7 @@ export default {
 
       const persistObj = {
         flags: {
-          "scum-and-villainy": {
+          "scum-and-villainy-teddy": {
             clocks: {
               progress: newClock.progress,
               size: newClock.size,
@@ -238,7 +238,7 @@ export default {
     // re-get in case there has been an update
     t = canvas.tokens.get(token.id);
 
-    const oldClock = new SaVClock(a.flags['scum-and-villainy']?.clocks);
+    const oldClock = new SaVClock(a.flags['scum-and-villainy-teddy']?.clocks);
     let newClock;
 
     const target = event.target.classList.contains("control-icon")
@@ -260,7 +260,7 @@ export default {
 
     const persistObj = {
         flags: {
-          "scum-and-villainy": {
+          "scum-and-villainy-teddy": {
             clocks: {
               progress: newClock.progress,
               size: newClock.size,

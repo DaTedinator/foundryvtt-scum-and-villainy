@@ -7,8 +7,8 @@ export class SaVFactionStatusSheet extends SaVSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["scum-and-villainy", "sheet", "actor", "fs-faction-dialog"],
-      template: "systems/scum-and-villainy/templates/faction-status-sheet.hbs",
+      classes: ["scum-and-villainy-teddy", "sheet", "actor", "fs-faction-dialog"],
+      template: "systems/scum-and-villainy-teddy/templates/faction-status-sheet.hbs",
       width: 1280,
       height: "auto",
       resizable: false,
@@ -24,7 +24,7 @@ export class SaVFactionStatusSheet extends SaVSheet {
     sheetData.editable = superData.editable;
     sheetData.isGM = game.user.isGM;
 
-    sheetData.exposeActorName = game.settings.get( "scum-and-villainy", "exposeActorName" );
+    sheetData.exposeActorName = game.settings.get( "scum-and-villainy-teddy", "exposeActorName" );
 
     sheetData.system.description = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
       sheetData.system.description,
@@ -76,7 +76,7 @@ export class SaVFactionStatusSheet extends SaVSheet {
     });
 
     if (this.actor.isOwner) {
-      await this.actor.setFlag("scum-and-villainy", item_type, items_to_add);
+      await this.actor.setFlag("scum-and-villainy-teddy", item_type, items_to_add);
     }
   }
 

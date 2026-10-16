@@ -9,7 +9,7 @@ export class SaVClock {
   }
 
   static get themes () {
-	  const default_t = game.system.savclocks.themes[ game.settings.get( "scum-and-villainy", "defaultClockTheme" ) ];
+	  const default_t = game.system.savclocks.themes[ game.settings.get( "scum-and-villainy-teddy", "defaultClockTheme" ) ];
 	  let curr_t = game.system.savclocks.themes;
 
 	  if ( curr_t.indexOf( default_t ) !== 0 ) {
@@ -44,7 +44,7 @@ export class SaVClock {
 
   get image () {
     return {
-      texture: { src: `systems/scum-and-villainy/themes/${this.theme}/${this.size}clock_${this.progress}.webp` },
+      texture: { src: `systems/scum-and-villainy-teddy/themes/${this.theme}/${this.size}clock_${this.progress}.webp` },
       widthTile: 200,
       heightTile: 200,
 	    widthSheet: 350,
@@ -54,7 +54,7 @@ export class SaVClock {
 
   get flags () {
     return {
-      "scum-and-villainy": {
+      "scum-and-villainy-teddy": {
 	    clocks: {
           theme: this._theme,
           size: this._size,

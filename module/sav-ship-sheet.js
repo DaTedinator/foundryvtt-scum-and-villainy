@@ -11,8 +11,8 @@ export class SaVShipSheet extends SaVSheet {
   /** @override */
 	static get defaultOptions() {
 	  return foundry.utils.mergeObject(super.defaultOptions, {
-	    classes: ["scum-and-villainy", "sheet", "actor"],
-	  	template: "systems/scum-and-villainy/templates/ship-sheet.html",
+	    classes: ["scum-and-villainy-teddy", "sheet", "actor"],
+	  	template: "systems/scum-and-villainy-teddy/templates/ship-sheet.html",
 	    width: 720,
 	    height: 970,
 	    tabs: [{navSelector: ".tabs", contentSelector: ".tab-content", initial: "abilities"}],

@@ -45,11 +45,11 @@ export default {
     log("Render")
     let t = canvas.tiles.get( tileData._id ).document;
 
-    if (!t?.flags['scum-and-villainy']?.clocks) {
+    if (!t?.flags['scum-and-villainy-teddy']?.clocks) {
       return;
     }
-    const button1HTML = await foundry.applications.handlebars.renderTemplate('systems/scum-and-villainy/templates/sav-clock-button1.html');
-    const button2HTML = await foundry.applications.handlebars.renderTemplate('systems/scum-and-villainy/templates/sav-clock-button2.html');
+    const button1HTML = await foundry.applications.handlebars.renderTemplate('systems/scum-and-villainy-teddy/templates/sav-clock-button1.html');
+    const button2HTML = await foundry.applications.handlebars.renderTemplate('systems/scum-and-villainy-teddy/templates/sav-clock-button2.html');
     
     html.querySelector("div.left").insertAdjacentHTML('beforeend', button1HTML);
     html.querySelector("div.left").addEventListener('click', async (event) => {
@@ -58,7 +58,7 @@ export default {
 
       t = canvas.tiles.get( tileData._id ).document;
 
-      const oldClock = new SaVClock(t.flags['scum-and-villainy']?.clocks);
+      const oldClock = new SaVClock(t.flags['scum-and-villainy-teddy']?.clocks);
       let newClock;
 
       const target = event.target.classList.contains("control-icon")
@@ -92,7 +92,7 @@ export default {
 
       t = canvas.tiles.get( tileData._id ).document;
 
-      const oldClock = new SaVClock(t.flags['scum-and-villainy']?.clocks);
+      const oldClock = new SaVClock(t.flags['scum-and-villainy-teddy']?.clocks);
       let newClock;
 
       const target = event.target.classList.contains("control-icon")

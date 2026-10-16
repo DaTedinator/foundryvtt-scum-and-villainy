@@ -40,7 +40,7 @@ export class SaVSheet extends foundry.appv1.sheets.ActorSheet {
     };
 
 	let items = await SaVHelpers.getAllItemsByType(item_type, game);
-    let html = `<div class="scum-and-villainy" id="items-to-add">`;
+    let html = `<div class="scum-and-villainy-teddy" id="items-to-add">`;
 	html += `<label class="label-stripe-gray flex-horizontal">`;
     if (item_type === "ability") {
 	  html += `<div class="flex one">${game.i18n.localize("BITD.StartAbility")}</div>`;
@@ -57,7 +57,7 @@ export class SaVSheet extends foundry.appv1.sheets.ActorSheet {
 	html += `<div class="flex one">${game.i18n.localize("BITD.Info")}</div>`;
 	html += `</label>`;
 
-	let ship_actors = this.actor.getFlag("scum-and-villainy", "ship") || [];
+	let ship_actors = this.actor.getFlag("scum-and-villainy-teddy", "ship") || [];
 	let actor = game.actors.get( ship_actors[0]?._id );
 
 	let main_systems = ["Engines", "Hull", "Comms", "Weapons"];
@@ -219,7 +219,7 @@ async _onFlagAddClick(event) {
   }
 
 	let items = await SaVHelpers.getAllActorsByType(item_type, game);
-  let html = `<div class="scum-and-villainy" id="items-to-add">`;
+  let html = `<div class="scum-and-villainy-teddy" id="items-to-add">`;
   items.forEach(e => {
 	  if (e.type === item_type) {
   	  html += `<input id="select-item-${e.id}" type="${input_type}" name="select_items" value="${e.id}">`;
@@ -282,7 +282,7 @@ async _onFlagAddClick(event) {
     });
 
     if ( this.actor.isOwner ) {
-	    await this.actor.setFlag("scum-and-villainy", item_type, items_to_add);
+	    await this.actor.setFlag("scum-and-villainy-teddy", item_type, items_to_add);
 	  }
   }
 

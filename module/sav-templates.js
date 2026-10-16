@@ -9,9 +9,9 @@ export const preloadHandlebarsTemplates = async function() {
   const templatePaths = [
 
     // Actor Sheet Partials
-    "systems/scum-and-villainy/templates/parts/coins.html",
-    "systems/scum-and-villainy/templates/parts/attributes.html",
-    "systems/scum-and-villainy/templates/parts/active-effects.html",
+    "systems/scum-and-villainy-teddy/templates/parts/coins.html",
+    "systems/scum-and-villainy-teddy/templates/parts/attributes.html",
+    "systems/scum-and-villainy-teddy/templates/parts/active-effects.html",
   ];
 
   // Load the template parts

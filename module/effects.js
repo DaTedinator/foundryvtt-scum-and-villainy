@@ -13,7 +13,7 @@ export function onManageActiveEffect(event, owner) {
       return owner.createEmbeddedDocuments("ActiveEffect", [{
         label: "New Effect",
         name: "New Effect",
-        icon: "systems/scum-and-villainy/styles/assets/icons/effects.svg",
+        icon: "systems/scum-and-villainy-teddy/styles/assets/icons/effects.svg",
         origin: owner.uuid,
         "duration.rounds": selector.dataset.effectType === "temporary" ? 1 : undefined,
         disabled: selector.dataset.effectType === "inactive"
