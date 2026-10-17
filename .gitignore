@@ -1,0 +1,9 @@
+# OS files
+.DS_Store
+
+# Ignore LevelDB volatile transaction and metadata files
+packs/**/CURRENT*
+packs/**/LOG*
+packs/**/MANIFEST*
+packs/**/*.log
+packs/**/LOCK
