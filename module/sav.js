@@ -23,6 +23,9 @@ import { SaVClockSheet } from "./sav-clock-sheet.js";
 import ClockTiles from "./sav-clock-tiles.js";
 import ClockSheet from "./sav-clock-sheet.js";
 import { log } from "./sav-clock-util.js";
+//Teddy edits
+import * as SaVRollModule from "./sav-roll.js";
+import { registerSystemOverrides } from "./teddy/interceptor.js";
 
 window.SaVHelpers = SaVHelpers;
 
@@ -292,6 +295,8 @@ Hooks.once("init", async function() {
   Handlebars.registerHelper('pc', function( string ) {
     return SaVHelpers.getProperCase( string );
   });
+
+  registerSystemOverrides();
 });
 
 /**
