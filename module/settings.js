@@ -11,6 +11,15 @@ export const registerSystemSettings = function() {
     default: 0
   });
 
+  game.settings.register("scum-and-villainy-teddy", "useThreatRolls", {
+    name: "BITD.SettingUseThreatRolls",
+    hint: "BITD.SettingUseThreatRollsHint",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false
+  });
+
   game.settings.register("scum-and-villainy-teddy", "defaultClockTheme", {
     name: "BITD.ClockSettingDefaultTheme",
     hint: "BITD.ClockSettingDefaultThemeHint",

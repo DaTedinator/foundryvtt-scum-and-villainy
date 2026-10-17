@@ -365,5 +365,8 @@
   "BITD.IncrementClock": "Increment Clock",
   "BITD.DecrementClock": "Decrement Clock",
   "BITD.CycleClockSize": "Cycle Clock Size",
-  "BITD.CycleClockTheme": "Cycle Clock Theme"
+  "BITD.CycleClockTheme": "Cycle Clock Theme",
+
+  "BITD.SettingUseThreatRolls": "Use Deep Cuts Threat Rolls",
+  "BITD.SettingUseThreatRollsHint": "Replaces standard Position/Effect Action Rolls with Threat Rolls."
 }
