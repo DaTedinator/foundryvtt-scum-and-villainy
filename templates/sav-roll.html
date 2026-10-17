@@ -170,7 +170,7 @@
       {{#if this.result}}
         <li class="roll die savd6"{{#if (eq this.result 6)}} style="color: var(--holoblue);"{{/if}}{{#if (lteq this.result 3)}} style="color: red;"{{/if}}{{#if (eq this.result 4)}} style="color: var(--almost_white);"{{/if}}{{#if (eq this.result 5)}} style="color: var(--almost_white);"{{/if}}>{{{this.result}}}</li>
       {{else}}
-        <li class="roll die savd6"{{#if (eq this.roll 6)}} style="color: var(--holoblue);"{{/if}}{{#if (lteq this.roll 3)}} style="color: red;"{{/if}}{{#if (eq this.result 4)}} style="color: var(--almost_white);"{{/if}}{{#if (eq this.result 5)}} style="color: var(--almost_white);"{{/if}}>{{{this.roll}}}</li>
+        <li class="roll die savd6"{{#if (eq this.roll 6)}} style="color: var(--holoblue);"{{/if}}{{#if (lteq this.roll 3)}} style="color: red;"{{/if}}{{#if (eq this.roll 4)}} style="color: var(--almost_white);"{{/if}}{{#if (eq this.roll 5)}} style="color: var(--almost_white);"{{/if}}>{{{this.roll}}}</li>
       {{/if}}
     {{/each}}
     {{#if @root.method}}
