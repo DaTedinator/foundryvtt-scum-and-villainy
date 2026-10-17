@@ -368,5 +368,7 @@
   "BITD.CycleClockTheme": "Cycle Clock Theme",
 
   "BITD.SettingUseThreatRolls": "Use Deep Cuts Threat Rolls",
-  "BITD.SettingUseThreatRollsHint": "Replaces standard Position/Effect Action Rolls with Threat Rolls."
+  "BITD.SettingUseThreatRollsHint": "Replaces standard Position/Effect Action Rolls with Threat Rolls.",
+  
+  "BITD.Threats": "Threats"
 }

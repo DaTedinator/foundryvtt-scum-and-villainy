@@ -44,10 +44,8 @@ export async function evaluateThreatRollPool (rolls, zeroMode) {
   const misses = sortedRolls.filter(val => val <= 3).length;
 
   return {
-    sixes:sixes,
-    partials:partials,
-    misses:misses,
-    isCritical: (sixes >= 2)
+    sixes, partials, misses,
+    edge: (sixes >= 2)
   }
 }
 
@@ -56,11 +54,17 @@ export async function evaluateThreatRollPool (rolls, zeroMode) {
  * @param {Object} rollParameters
  * @returns {Promise<ChatMessage>}
  */
-export async function executeThreatRoll(rollParameters) {
-  //console.log(rollParameters)
-  const rollFormula = rollParameters.zeromode ? "2d6kl" : `${Math.max(rollParameters.dice, 1)}d6`;
+export async function executeThreatRoll({
+  attribute_name="fortune",
+  base_dice=0,
+  threats=0,
+  modifier=0
+}) {
+  const dicePool = base_dice + threats + modifier;
+  const zeroMode = dicePool <= 0;
+  const rollFormula = zeroMode ? "2d6kl" : `${dicePool}d6`;
   const diceRoll = await new Roll(rollFormula).evaluate();
-  const evaluation = evaluateThreatRollPool(diceRoll.terms[0].results, rollParameters.zeromode);
+  const evaluation = evaluateThreatRollPool(diceRoll.terms[0].results, zeroMode);
 
   const templateData = {
     is_threat_roll: true,

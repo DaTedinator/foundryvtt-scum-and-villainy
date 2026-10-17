@@ -1,4 +1,4 @@
-import { executeThreatRoll } from "./roll.js";
+import { executeThreatRoll } from "./rolls.js";
 
 /**
  * Attaches method wrappers to the Actor document class for threat roll interception.
